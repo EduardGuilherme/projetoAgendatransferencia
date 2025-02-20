@@ -89,4 +89,8 @@ A aplicação será iniciada em uma URL como:
 http://localhost:8080 (ou conforme configurado).
 
 Integração com a API
+<<<<<<< HEAD
 Certifique-se de que a URL base do Axios no front-end está apontando para a porta correta onde a API está rodando.
+=======
+Certifique-se de que a URL base do Axios no front-end está apontando para a porta correta onde a API está rodando.
+>>>>>>> 5535f0b68ccce575f9808f2517cf5d6b1b8e8164
