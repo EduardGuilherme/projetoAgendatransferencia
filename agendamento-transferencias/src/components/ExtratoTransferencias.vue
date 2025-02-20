@@ -4,7 +4,6 @@
       <table border="1">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Conta Origem</th>
             <th>Conta Destino</th>
             <th>Valor</th>
@@ -14,14 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in transfers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.contaOrigem }}</td>
-            <td>{{ item.contaDestino }}</td>
-            <td>{{ item.valorTransferencia }}</td>
-            <td>{{ item.taxa }}</td>
-            <td>{{ item.dataAgendamento }}</td>
-            <td>{{ item.dataTransferencia }}</td>
+          <tr v-for="transfer in transfers" :key="transfer.id">
+            <td>{{ transfer.contaOrigem }}</td>
+            <td>{{ transfer.contaDestino }}</td>
+            <td>{{ transfer.valor }}</td>
+            <td>{{ transfer.taxa }}</td>
+            <td>{{ transfer.dataAgendamento }}</td>
+            <td>{{ transfer.dataTransferencia }}</td>
           </tr>
         </tbody>
       </table>
@@ -36,9 +34,9 @@
     data() {
       return {
         transfers: []
-      }
+      };
     },
-    async created() {
+    async mounted() {
       await this.buscarTransferencias();
     },
     methods: {
@@ -51,6 +49,24 @@
         }
       }
     }
-  }
+  };
   </script>
+  
+  <style scoped>
+  h2 {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  </style>
   
